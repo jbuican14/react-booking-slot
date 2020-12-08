@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Slot from './components/Slot.component';
 
 function App() {

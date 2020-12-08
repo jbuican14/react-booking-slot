@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Calendar from './Calendar.component';
 
-export default function Slot() {
+function Slot() {
+  const [date, setDate] = useState('');
+  const [showComponent, setShowComponent] = useState(false);
+
   return (
     <>
       <div>
-        <p>Thursday March 14 </p>
+        <p>{date} </p>
         <span>Earliest delivery</span>
         <img src="" />
-        <button>Change</button>
+        <button onClick={() => setShowComponent(true)}>Change</button>
+        {showComponent ? <Calendar /> : null}
       </div>
-
-      <Calendar />
     </>
   );
 }
+export default Slot;
