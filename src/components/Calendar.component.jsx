@@ -31,6 +31,7 @@ function Calendar({ onClick, onSubmit }) {
 
   const handleCancel = (e) => {
     console.log('cancel the change', selectedDate);
+    onSubmit(moment(date).format('ddd MMM D').toString());
   };
   const handleChangeDate = (e) => {
     console.log('update the change', selectedDate);

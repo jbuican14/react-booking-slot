@@ -22,7 +22,7 @@ const Slot = () => {
   const onUpdateSubmit = (value) => {
     console.log(value);
     if (value) setSelectedDate(value);
-    console.log(selectedDate);
+    setShowComponent(false);
   };
 
   const setEarliestDelivery = () => {
