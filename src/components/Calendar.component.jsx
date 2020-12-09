@@ -36,7 +36,6 @@ function Calendar({ onClick, onSubmit }) {
     console.log('update the change', selectedDate);
     // setDate(selectedDate);
     try {
-      moment().format(selectedDate.toString());
       // selectedDate.format('ddd MMM D').toString();
       onSubmit(moment(selectedDate).format('ddd MMM D').toString());
       console.log(selectedDate);

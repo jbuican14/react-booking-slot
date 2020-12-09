@@ -48,7 +48,7 @@ const Slot = () => {
             }}
           >
             <p className="slot-calendar-text">
-              {selectedDate}
+              {selectedDate.split(' ').splice(2, 1)}
               {console.log(selectedDate)}
             </p>
           </div>
