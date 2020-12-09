@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
+
 import buildCalendar from './buildCalendar';
+import './calendar.styles.scss';
 
 function Calendar() {
   const [calendar, setCalendar] = useState([]);
@@ -11,7 +13,7 @@ function Calendar() {
     setCalendar(buildCalendar(date));
     console.log(selectedDate);
     if (selectedDate === '') setSelectedDate(new Date());
-  }, [date]);
+  }, [date, selectedDate]);
 
   const isSelected = (item, value) => {
     // dayStyles(item, value)
@@ -26,7 +28,9 @@ function Calendar() {
     <div className="body">
       <div className="day-name">
         {dayOfTheWeek.map((d, i) => (
-          <div className="day-name">{d}</div>
+          <div className="day-name" key={i}>
+            {d}
+          </div>
         ))}
       </div>
       {calendar.map((week, id) => (

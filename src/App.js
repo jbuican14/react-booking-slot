@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Slot from './components/Slot.component';
+import './app.styles.scss';
 
 function App() {
   return (

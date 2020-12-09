@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'Cooper Hewitt Bold';
+  src: url(./fonts/CooperHewitt-Bold.woff) format('woff'),
+    url(./fonts/CooperHewitt-Bold.woff2) format('woff2'),
+    url(./fonts/CooperHewitt-Bold.eot) format('embedded-opentype'),
+    url(./fonts/CooperHewitt-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'GT Pressura Mono';
+  src: url(./fonts/GTPressuraMono.woff) format('woff'),
+    url(./fonts/GTPressuraMono.woff2) format('woff2'),
+    url(./fonts/GTPressuraMono.eot) format('embedded-opentype'),
+    url(./fonts/GTPressuraMono.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'GT Pressura Regular';
+  src: url(./fonts/GT-Pressura-Regular.woff) format('woff'),
+    url(./fonts/GT-Pressura-Regular.woff2) format('woff2'),
+    url(./fonts/GT-Pressura-Regular.eot) format('embedded-opentype'),
+    url(./fonts/GT-Pressura-Regular.ttf) format('truetype');
+}
+
+/* Color */
+$yellow-color: #f0e118;
+$red-color: #e66c55;
+$pink-color: #f2c4c4;
+$blue-color: #1d6c93;
+$grey-color: #f0f0f0;
+$green-color: #f1f7ee;
+
+* {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'GT Pressura Regular';
+  color: $blue-color;
+}
+
+h1 {
+  font-family: Cooper Hewitt Bold;
+  color: $blue-color;
+  font-size: 5rem;
+  padding-top: 3.8rem;
+}
+
+.container {
+  width: 668px;
+  height: 385px;
+  margin: 3.8rem auto 0;
+  background-color: $grey-color;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  align-self: center;
+}
+
+.sub-heading {
+  font-size: 2.4rem;
+  align-self: center;
+  margin-top: 2.5rem;
+}
