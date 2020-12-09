@@ -1,1 +1,76 @@
 /*calendar*/
+.body {
+  background-color: rgba(243, 237, 237, 0.8);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+}
+
+.calendar {
+  width: 350px;
+  height: 420px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.day-name {
+  color: black;
+  height: 50px;
+  margin: 1em auto 0 !important;
+}
+.active,
+.next {
+  cursor: pointer;
+  font-size: 1.2em;
+}
+span.deactive {
+  pointer-events: none;
+  font-size: 1.2em;
+  color: lightgray;
+}
+
+.month,
+.day-name {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 3px;
+  position: relative;
+  margin: 0.3em auto;
+}
+.month > * {
+  cursor: pointer;
+}
+.month > .before {
+  cursor: none;
+  pointer-events: none;
+}
+
+.month > * {
+  border: 1px solid #e97864;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.before {
+  background-color: #ccc;
+}
+
+.today {
+  color: green;
+}
+
+.selected {
+  background-color: #e97864;
+  color: #fff;
+  border: 1px dotted #fff;
+  transition: background-color 0.3s;
+}
+
+.none {
+  opacity: 0;
+}
