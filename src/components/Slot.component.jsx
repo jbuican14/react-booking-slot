@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 
 import Calendar from './Calendar.component';
+import Backdrop from './Backdrop.component';
 import './slot.styles.scss';
 import { ReactComponent as VanSVG } from '../van.svg';
 import CalendarSVG from '../calendar.svg';
@@ -19,6 +20,11 @@ const Slot = () => {
     console.log(selectedDate);
   }, []);
 
+  const onBackdropClick = (value) => {
+    setShowComponent(false);
+    console.log(value);
+  };
+
   const onUpdateSubmit = (value) => {
     console.log(value);
     if (value) setSelectedDate(value);
@@ -31,6 +37,10 @@ const Slot = () => {
 
   return (
     <>
+      {/* <Backdrop show={showComponent} onClick={onBackdropClick} /> */}
+      {showComponent && (
+        <Backdrop onClick={showComponent} onClosed={onBackdropClick} />
+      )}
       <div className="slot-container">
         <div className="slot-date">
           <p className="slot-selected-date"> {selectedDate} </p>
