@@ -6,7 +6,8 @@ import CalendarHeader from './CalendarHeader.component';
 import dayStyles, { beforeToday } from './styles';
 import './calendar.styles.scss';
 
-function Calendar() {
+function Calendar({ onClick, onSubmit }) {
+  // console.log(onSubmit);
   const [calendar, setCalendar] = useState([]);
   const [date, setDate] = useState(moment());
   const [selectedDate, setSelectedDate] = useState('');
@@ -14,7 +15,9 @@ function Calendar() {
   useEffect(() => {
     setCalendar(buildCalendar(date));
     console.log('inside setCalendar');
-    if (selectedDate === '') setSelectedDate(new Date());
+    let defaultDate = new Date();
+    if (selectedDate === '') setSelectedDate(defaultDate);
+
     console.log(selectedDate);
   }, [date, selectedDate]);
 
@@ -26,10 +29,26 @@ function Calendar() {
     if (item.isSame(new Date(), 'day')) return 'today';
   };
 
+  const handleCancel = (e) => {
+    console.log('cancel the change', selectedDate);
+  };
+  const handleChangeDate = (e) => {
+    console.log('update the change', selectedDate);
+    // setDate(selectedDate);
+    try {
+      moment().format(selectedDate.toString());
+      // selectedDate.format('ddd MMM D').toString();
+      onSubmit(moment(selectedDate).format('ddd MMM D').toString());
+      console.log(selectedDate);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   const dayOfTheWeek = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
   return (
     <>
-      <div className="body">
+      <div className={'body ' + onClick}>
         <div className="calendar">
           <CalendarHeader date={date} />
 
@@ -54,8 +73,12 @@ function Calendar() {
             </div>
           ))}
           <div>
-            <button className="cancel-btn">Cancel, Don't Change</button>
-            <button className="change-btn">Change Date</button>
+            <button className="cancel-btn" onClick={() => handleCancel()}>
+              Cancel, Don't Change
+            </button>
+            <button className="change-btn" onClick={() => handleChangeDate()}>
+              Change Date
+            </button>
           </div>
         </div>
       </div>

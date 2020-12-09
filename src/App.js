@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Slot from './components/Slot.component';
 import './app.styles.scss';

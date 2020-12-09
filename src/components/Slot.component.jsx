@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import moment from 'moment';
 
 import Calendar from './Calendar.component';
 import './slot.styles.scss';
@@ -6,14 +7,33 @@ import { ReactComponent as VanSVG } from '../van.svg';
 import CalendarSVG from '../calendar.svg';
 
 const Slot = () => {
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState(moment());
   const [showComponent, setShowComponent] = useState(false);
+  const [selectedDate, setSelectedDate] = useState('');
+
+  useEffect(() => {
+    setDate(new Date());
+    console.log('SLOT', date.format('ddd MMM Do').toString(), date);
+    const deliveryDate = date.format('ddd MMM Do').toString();
+    if (!selectedDate) setSelectedDate(date.format('ddd MMM D').toString());
+    console.log(selectedDate);
+  }, []);
+
+  const onUpdateSubmit = (value) => {
+    console.log(value);
+    if (value) setSelectedDate(value);
+    console.log(selectedDate);
+  };
+
+  const setEarliestDelivery = () => {
+    console.log(date.format('ddd MMM D').toString());
+  };
 
   return (
     <>
       <div className="slot-container">
         <div className="slot-date">
-          <p className="slot-selected-date">Thurs {date} </p>
+          <p className="slot-selected-date"> {selectedDate} </p>
           <div className="slot-text-wrapper">
             <VanSVG />
             <span className="slot-text">Earliest delivery</span>
@@ -27,14 +47,19 @@ const Slot = () => {
               backgroundSize: 'contain',
             }}
           >
-            <p className="slot-calendar-text">14</p>
+            <p className="slot-calendar-text">
+              {selectedDate}
+              {console.log(selectedDate)}
+            </p>
           </div>
           <button onClick={() => setShowComponent(true)} className="slot-btn">
             Change <span className="slot-arrow-right">&gt;</span>
           </button>
         </div>
       </div>
-      {showComponent && <Calendar />}
+      {showComponent && (
+        <Calendar onClick={showComponent} onSubmit={onUpdateSubmit} />
+      )}
     </>
   );
 };
