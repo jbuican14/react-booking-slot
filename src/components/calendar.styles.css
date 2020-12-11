@@ -1,0 +1,214 @@
+/*calendar*/
+.body {
+  background-color: #ffffff;
+  position: absolute;
+  width: 350px;
+  height: 370px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 102;
+  -webkit-font-smoothing: antialiased;
+}
+
+.body.true {
+  -webkit-animation: animationForm 0.6s;
+          animation: animationForm 0.6s;
+}
+
+.calendar {
+  width: 350px;
+  height: 370px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 1px solid grey;
+  padding: 1rem;
+}
+
+.day-name {
+  color: black;
+  height: 50px;
+  margin: 1em auto 0 !important;
+}
+
+.active,
+.next {
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+span.deactive {
+  pointer-events: none;
+  font-size: 1.2em;
+  color: lightgray;
+}
+
+.day-name {
+  height: 50px;
+  margin: 1em auto 0 !important;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+}
+
+.day-naming {
+  margin: 0 auto;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1d6c93;
+}
+
+.month {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  grid-column-gap: 0.3rem;
+  grid-row-gap: 0.3rem;
+  position: relative;
+  padding-top: 0.3rem;
+}
+
+.month > * {
+  cursor: pointer;
+}
+
+.month > *:hover {
+  -webkit-box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+.month > .before {
+  cursor: none;
+  pointer-events: none;
+}
+
+.month > * {
+  border: 1px solid #e97864;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #df7b6a;
+}
+
+.before {
+  background-color: #f0f0f0;
+  color: #9b9b9b;
+  background: #d8d8d8;
+  border: none;
+}
+
+.selected {
+  background-color: #e97864;
+  color: #fff;
+  border: 1px solid #fff;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.none {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Cancel button & Update change button */
+button {
+  font-family: 'GT Pressura Regular';
+}
+
+.button-wrapper {
+  margin: 1rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.show-btns {
+  min-width: 117px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 0.1rem solid transparent;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  padding: 1rem 1.5rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.show-btns:nth-child(1) {
+  margin-right: 1rem;
+}
+
+.show-btns.change-btn {
+  color: #e97864;
+  border: 0.1rem solid #e97864;
+}
+
+.show-btns.change-btn:hover {
+  color: #e3593f;
+  -webkit-box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+.show-btns.cancel-btn {
+  color: #9c9c9c;
+}
+
+.show-btns.cancel-btn:hover {
+  color: #7f7e7e;
+  -webkit-box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+@-webkit-keyframes animationForm {
+  0% {
+    left: 40%;
+    opacity: 0;
+  }
+  50% {
+    left: 60%;
+    opacity: 1;
+  }
+  75% {
+    left: 45%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes animationForm {
+  0% {
+    left: 40%;
+    opacity: 0;
+  }
+  50% {
+    left: 60%;
+    opacity: 1;
+  }
+  75% {
+    left: 45%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+/*# sourceMappingURL=calendar.styles.css.map */

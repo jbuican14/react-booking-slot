@@ -1,0 +1,183 @@
+.slot-container {
+  width: 604px;
+  height: 132px;
+  background-color: #ffffff;
+  font-family: GT Pressura Regular;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 1.8rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  -webkit-box-shadow: 0.1rem 0rem 0.5rem rgba(0, 0, 0, 0.6);
+          box-shadow: 0.1rem 0rem 0.5rem rgba(0, 0, 0, 0.6);
+}
+
+.slot-date {
+  font-size: 2.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 3.8rem;
+  text-align: left;
+}
+
+.slot-selected-date {
+  font-size: 2.8rem;
+}
+
+.slot-text-wrapper {
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  font-size: 2.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eef9ef;
+  border-radius: 0.2rem;
+}
+
+.slot-calendar {
+  -webkit-clip-path: circle(76.1% at 71% 49%);
+          clip-path: circle(76.1% at 71% 49%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #c8dce9;
+  -webkit-clip-path: circle(94% at 81% 50%);
+          clip-path: circle(94% at 81% 50%);
+}
+
+.slot-svg-calendar {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 50px;
+  height: 54px;
+  position: relative;
+}
+
+.slot-calendar-text {
+  font-size: 2rem;
+  text-align: center;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
+}
+
+.slot-text {
+  padding: 0.5rem 1rem;
+  font-size: 2.8rem;
+}
+
+.slot #van {
+  margin-right: 1rem;
+}
+
+.slot-btn {
+  font-family: GT Pressura Mono;
+  grid-column: 2/-1;
+  border: none;
+  background: transparent;
+  font-size: 3rem;
+  color: #1d6c93;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: text-shadow 0.2s;
+  transition: text-shadow 0.2s;
+}
+
+.slot-btn::before {
+  background-color: #1d6c93;
+  bottom: 1.3rem;
+  content: '';
+  height: 0.3rem;
+  position: absolute;
+  width: 17%;
+}
+
+.slot-btn:hover {
+  text-shadow: 0 0 0.1rem rgba(14, 13, 13, 0.5);
+}
+
+.slot-arrow-right {
+  font-size: 3rem;
+  position: absolute;
+  right: 1.2rem;
+  -webkit-animation: AnimArrow 0.5s 3 alternate;
+          animation: AnimArrow 0.5s 3 alternate;
+}
+
+#calendar {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+@-webkit-keyframes AnimArrow {
+  0%,
+  20%,
+  60%,
+  90%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  30% {
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
+  }
+  50% {
+    -webkit-transform: translateX(0.5rem);
+            transform: translateX(0.5rem);
+  }
+}
+
+@keyframes AnimArrow {
+  0%,
+  20%,
+  60%,
+  90%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  30% {
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
+  }
+  50% {
+    -webkit-transform: translateX(0.5rem);
+            transform: translateX(0.5rem);
+  }
+}
+/*# sourceMappingURL=slot.styles.css.map */
