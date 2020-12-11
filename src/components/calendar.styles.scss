@@ -12,6 +12,10 @@
 
   &.true {
     animation: animationForm 0.6s;
+
+    @media (max-width: 668px) {
+      margin-top: 2rem;
+    }
   }
 }
 

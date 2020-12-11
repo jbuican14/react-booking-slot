@@ -45,6 +45,11 @@ h1 {
   color: $blue-color;
   font-size: 5rem;
   padding-top: 3.8rem;
+
+  @media (max-width: 668px) {
+    font-size: 3rem;
+    padding-top: 1.8rem;
+  }
 }
 
 .container {
@@ -55,6 +60,11 @@ h1 {
   position: relative;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 668px) {
+    width: 468px;
+    height: 285px;
+  }
 }
 
 .heading {
@@ -65,4 +75,9 @@ h1 {
   font-size: 2.4rem;
   align-self: center;
   margin-top: 2.5rem;
+
+  @media (max-width: 668px) {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
 }

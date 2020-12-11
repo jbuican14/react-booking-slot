@@ -11,6 +11,13 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     box-shadow: 0.1rem 0rem 0.5rem rgba(0, 0, 0, 0.6);
+
+    @media (max-width: 668px) {
+      width: 404px;
+      height: 100px;
+      font-size: 3rem;
+      bottom: 1rem;
+    }
   }
 
   &-date {
@@ -21,10 +28,19 @@
     align-items: flex-start;
     padding-left: 3.8rem;
     text-align: left;
+
+    @media (max-width: 668px) {
+      font-size: 1.8rem;
+      padding-left: 2rem;
+    }
   }
 
   &-selected-date {
     font-size: 2.8rem;
+
+    @media (max-width: 668px) {
+      font-size: 1.8rem;
+    }
   }
   &-text-wrapper {
     grid-row-start: 2;
@@ -33,6 +49,10 @@
     align-items: center;
     background-color: #eef9ef;
     border-radius: 0.2rem;
+
+    @media (max-width: 668px) {
+      font-size: 1.8rem;
+    }
   }
 
   &-calendar {
@@ -43,6 +63,10 @@
     justify-content: center;
     background: #c8dce9;
     clip-path: circle(94% at 81% 50%);
+
+    @media (max-width: 668px) {
+      clip-path: circle(91% at 81% 50%);
+    }
   }
 
   &-svg-calendar {
@@ -64,6 +88,10 @@
   &-text {
     padding: 0.5rem 1rem;
     font-size: 2.8rem;
+
+    @media (max-width: 668px) {
+      font-size: 1.8rem;
+    }
   }
   #van {
     margin-right: 1rem;
@@ -87,10 +115,18 @@
       height: 0.3rem;
       position: absolute;
       width: 17%;
+
+      @media (max-width: 668px) {
+        bottom: 0.6rem;
+      }
     }
 
     &:hover {
       text-shadow: 0 0 0.1rem rgba(14, 13, 13, 0.5);
+    }
+
+    @media (max-width: 668px) {
+      font-size: 2rem;
     }
   }
   &-arrow-right {
@@ -98,10 +134,20 @@
     position: absolute;
     right: 1.2rem;
     animation: AnimArrow 0.5s 3 alternate;
+
+    @media (max-width: 668px) {
+      font-size: 2rem;
+      right: 0.2rem;
+      animation: AnimArrow-mobile 0.5s 3 alternate;
+    }
   }
 }
 #calendar {
   transform: scale(1.5);
+
+  @media (max-width: 668px) {
+    transform: scale(1);
+  }
 }
 
 @keyframes AnimArrow {
@@ -119,5 +165,23 @@
 
   50% {
     transform: translateX(0.5rem);
+  }
+}
+
+@keyframes AnimArrow-mobile {
+  0%,
+  20%,
+  60%,
+  90%,
+  100% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(0.3rem);
+  }
+
+  50% {
+    transform: translateX(0.15rem);
   }
 }

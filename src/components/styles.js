@@ -1,6 +1,4 @@
 function isSelectedDay(day, value) {
-  console.log('day', day);
-  console.log('value', value);
   return value.isSame(day, 'day');
 }
 
