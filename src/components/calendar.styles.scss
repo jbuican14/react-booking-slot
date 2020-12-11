@@ -1,6 +1,6 @@
 /*calendar*/
 .body {
-  background-color: rgba(243, 237, 237, 0.8);
+  background-color: #ffffff;
   position: absolute;
   width: 350px;
   height: 420px;
@@ -37,13 +37,27 @@ span.deactive {
   color: lightgray;
 }
 
-.month,
 .day-name {
+  height: 50px;
+  margin: 1em auto 0 !important;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-gap: 3px;
+}
+
+.day-naming {
+  margin: 0 auto;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1d6c93;
+}
+
+.month {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-column-gap: 0.3rem;
+  grid-row-gap: 0.3rem;
   position: relative;
-  margin: 0.3em auto;
+  padding-top: 0.3rem;
 }
 .month > * {
   cursor: pointer;
@@ -62,7 +76,7 @@ span.deactive {
 }
 
 .before {
-  background-color: #ccc;
+  background-color: #f0f0f0;
 }
 
 .today {
@@ -72,7 +86,7 @@ span.deactive {
 .selected {
   background-color: #e97864;
   color: #fff;
-  border: 1px dotted #fff;
+  border: 1px solid #fff;
   transition: background-color 0.3s;
 }
 

@@ -12,7 +12,6 @@ function isToday(day) {
   return day.isSame(new Date(), 'day');
 }
 export default function dayStyles(day, value) {
-  console.log('day', 'value');
   if (beforeToday(day)) return 'before';
   if (isSelectedDay(day)) return 'selected';
   if (isToday(day)) return 'today';

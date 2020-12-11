@@ -19,8 +19,6 @@ function Calendar({ onClick, onSubmit, data }) {
   }, [date, selectedDate]);
 
   const isSelected = (item) => {
-    console.log('item', item);
-    console.log('selectedDate', selectedDate);
     if (item.isBefore(moment().startOf('month'))) return 'none';
     if (item.isAfter(moment().endOf('month'))) return 'none';
     if (item.isBefore(new Date(), 'day')) return 'before';
@@ -38,14 +36,12 @@ function Calendar({ onClick, onSubmit, data }) {
             key={idx}
             onClick={() => !beforeToday(item) && setSelectedDate(item)}
             className={
-              // item._d.toString().slice(0, 10) === data.toString()
               item._d.toString().slice(3, 10) ===
               selectedDate._d.toString().slice(3, 10)
                 ? 'selected'
                 : isSelected(item)
             }
           >
-            {console.log(selectedDate)}
             {item.format('D').toString()}
           </div>
         ))}
@@ -56,11 +52,9 @@ function Calendar({ onClick, onSubmit, data }) {
     onSubmit(moment(date).format('ddd MMM D').toString());
   };
   const handleChangeDate = (e) => {
-    console.log('update the change', selectedDate);
     try {
-      setSelectedDate(selectedDate); // NEW DEVELOPMENT
+      setSelectedDate(selectedDate);
       onSubmit(moment(selectedDate).format('ddd MMM D').toString());
-      console.log('selectedDate ====>', selectedDate);
     } catch (e) {
       console.log(e);
     }
@@ -75,7 +69,7 @@ function Calendar({ onClick, onSubmit, data }) {
 
           <div className="day-name">
             {dayOfTheWeek.map((d, i) => (
-              <div className="day-name" key={i}>
+              <div className={'day-naming'} key={i}>
                 {d}
               </div>
             ))}

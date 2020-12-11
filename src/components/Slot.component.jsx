@@ -15,7 +15,6 @@ const Slot = () => {
   useEffect(() => {
     setupDate(); //setDate(new Date());
     if (!selectedDate) handleSelectedDate(selectedDate);
-    // console.log(selectedDate);
   }, [selectedDate]);
 
   const setupDate = () => {
@@ -32,10 +31,6 @@ const Slot = () => {
     if (value) setSelectedDate(value);
     setShowComponent(false);
   };
-
-  // const setEarliestDelivery = () => {
-  //   console.log(date.format('ddd MMM D').toString());
-  // };
 
   return (
     <>
