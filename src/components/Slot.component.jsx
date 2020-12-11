@@ -6,6 +6,7 @@ import Backdrop from './Backdrop.component';
 import './slot.styles.scss';
 import { ReactComponent as VanSVG } from '../van.svg';
 import CalendarSVG from '../calendar.svg';
+import { ReactComponent as ArrowBtnSVG } from '../right.svg';
 
 const Slot = () => {
   const [date, setDate] = useState(moment());
@@ -19,7 +20,7 @@ const Slot = () => {
   useEffect(() => {
     setupDate(); //setDate(new Date());
     if (!selectedDate) handleSelectedDate(selectedDate);
-  }, [selectedDate, handleSelectedDate]);
+  }, [selectedDate]);
 
   const setupDate = () => {
     setDate(new Date());
@@ -64,20 +65,7 @@ const Slot = () => {
           <button onClick={() => setShowComponent(true)} className="slot-btn">
             Change{' '}
             <span className="slot-arrow-right">
-              <svg
-                width="17"
-                height="26"
-                id="right"
-                viewBox="0 0 17 26"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.53644 24.7002L16 12.9187L1 0.700195"
-                  stroke="#1d6c93"
-                  strokeWidth="3.15"
-                />
-              </svg>
+              <ArrowBtnSVG />
             </span>
           </button>
         </div>
