@@ -12,17 +12,19 @@ const Slot = () => {
   const [showComponent, setShowComponent] = useState(false);
   const [selectedDate, setSelectedDate] = useState('');
 
+  const handleSelectedDate = (d) => {
+    setSelectedDate(date.format('ddd MMM D').toString());
+  };
+
   useEffect(() => {
     setupDate(); //setDate(new Date());
     if (!selectedDate) handleSelectedDate(selectedDate);
-  }, [selectedDate]);
+  }, [selectedDate, handleSelectedDate]);
 
   const setupDate = () => {
     setDate(new Date());
   };
-  const handleSelectedDate = (d) => {
-    setSelectedDate(date.format('ddd MMM D').toString());
-  };
+
   const onBackdropClick = (value) => {
     setShowComponent(false);
   };
