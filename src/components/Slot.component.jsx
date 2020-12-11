@@ -13,27 +13,29 @@ const Slot = () => {
   const [selectedDate, setSelectedDate] = useState('');
 
   useEffect(() => {
-    setDate(new Date());
-    console.log('SLOT', date.format('ddd MMM Do').toString(), date);
-    const deliveryDate = date.format('ddd MMM Do').toString();
-    if (!selectedDate) setSelectedDate(date.format('ddd MMM D').toString());
-    console.log(selectedDate);
-  }, []);
+    setupDate(); //setDate(new Date());
+    if (!selectedDate) handleSelectedDate(selectedDate);
+    // console.log(selectedDate);
+  }, [selectedDate]);
 
+  const setupDate = () => {
+    setDate(new Date());
+  };
+  const handleSelectedDate = (d) => {
+    setSelectedDate(date.format('ddd MMM D').toString());
+  };
   const onBackdropClick = (value) => {
     setShowComponent(false);
-    console.log(value);
   };
 
   const onUpdateSubmit = (value) => {
-    console.log(value);
     if (value) setSelectedDate(value);
     setShowComponent(false);
   };
 
-  const setEarliestDelivery = () => {
-    console.log(date.format('ddd MMM D').toString());
-  };
+  // const setEarliestDelivery = () => {
+  //   console.log(date.format('ddd MMM D').toString());
+  // };
 
   return (
     <>
@@ -59,7 +61,6 @@ const Slot = () => {
           >
             <p className="slot-calendar-text">
               {selectedDate.split(' ').splice(2, 1)}
-              {console.log(selectedDate)}
             </p>
           </div>
           <button onClick={() => setShowComponent(true)} className="slot-btn">
@@ -68,7 +69,11 @@ const Slot = () => {
         </div>
       </div>
       {showComponent && (
-        <Calendar onClick={showComponent} onSubmit={onUpdateSubmit} />
+        <Calendar
+          onClick={showComponent}
+          onSubmit={onUpdateSubmit}
+          data={selectedDate}
+        />
       )}
     </>
   );

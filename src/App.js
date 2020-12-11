@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Slot from './components/Slot.component';
 import './app.styles.scss';
@@ -9,8 +9,8 @@ function App() {
       <div className="container">
         <h1 className="heading">Choose your delivery day</h1>
         <p className="sub-heading">Delivery is always free</p>
+        <Slot />
       </div>
-      <Slot />
     </>
   );
 }
