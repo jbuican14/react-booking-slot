@@ -49,7 +49,7 @@ function Calendar({ onClick, onSubmit, data }) {
     ));
   };
   const handleCancel = (e) => {
-    onSubmit(moment(date).format('ddd MMM D').toString());
+    onSubmit();
   };
   const handleChangeDate = (e) => {
     try {
@@ -75,11 +75,18 @@ function Calendar({ onClick, onSubmit, data }) {
             ))}
           </div>
           {renderCalendar()}
-          <div>
-            <button className="cancel-btn" onClick={() => handleCancel()}>
-              Cancel, Don't Change
+          <div className="button-wrapper">
+            <button
+              className="show-btns cancel-btn"
+              onClick={() => handleCancel()}
+            >
+              Cancel,
+              <br /> Don't Change
             </button>
-            <button className="change-btn" onClick={() => handleChangeDate()}>
+            <button
+              className="show-btns change-btn"
+              onClick={() => handleChangeDate()}
+            >
               Change Date
             </button>
           </div>

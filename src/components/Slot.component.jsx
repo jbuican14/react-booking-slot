@@ -29,6 +29,7 @@ const Slot = () => {
 
   const onUpdateSubmit = (value) => {
     if (value) setSelectedDate(value);
+
     setShowComponent(false);
   };
 
@@ -59,7 +60,23 @@ const Slot = () => {
             </p>
           </div>
           <button onClick={() => setShowComponent(true)} className="slot-btn">
-            Change <span className="slot-arrow-right">&gt;</span>
+            Change{' '}
+            <span className="slot-arrow-right">
+              <svg
+                width="17"
+                height="26"
+                id="right"
+                viewBox="0 0 17 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.53644 24.7002L16 12.9187L1 0.700195"
+                  stroke="#1d6c93"
+                  strokeWidth="3.15"
+                />
+              </svg>
+            </span>
           </button>
         </div>
       </div>

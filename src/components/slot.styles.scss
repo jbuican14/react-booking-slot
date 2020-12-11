@@ -78,6 +78,7 @@
     color: #1d6c93;
     outline: none;
     cursor: pointer;
+    transition: text-shadow 0.2s;
 
     &::before {
       background-color: #1d6c93;
@@ -87,11 +88,36 @@
       position: absolute;
       width: 17%;
     }
+
+    &:hover {
+      text-shadow: 0 0 0.1rem rgba(14, 13, 13, 0.5);
+    }
   }
   &-arrow-right {
     font-size: 3rem;
+    position: absolute;
+    right: 1.8rem;
+    animation: AnimArrow 0.5s 3 alternate;
   }
 }
 #calendar {
   transform: scale(1.5);
+}
+
+@keyframes AnimArrow {
+  0%,
+  20%,
+  60%,
+  90%,
+  100% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(1rem);
+  }
+
+  50% {
+    transform: translateX(0.5rem);
+  }
 }
