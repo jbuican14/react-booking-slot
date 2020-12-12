@@ -134,6 +134,7 @@
     position: absolute;
     right: 1.2rem;
     animation: AnimArrow 0.5s 3 alternate;
+    bottom: 1rem;
 
     @media (max-width: 668px) {
       font-size: 2rem;
